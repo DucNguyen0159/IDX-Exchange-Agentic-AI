@@ -1,0 +1,12 @@
+{
+  "name": "week-02-nl-property-search",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node test.ts",
+    "install-skill": "mkdir -p ~/.openclaw/workspace/skills/nl-property-search && cp SKILL.md parse.ts parseQuery.ts package.json ~/.openclaw/workspace/skills/nl-property-search/"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.4"
+  }
+}

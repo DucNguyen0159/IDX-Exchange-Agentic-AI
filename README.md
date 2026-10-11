@@ -7,7 +7,8 @@ Work for the IDX Exchange Agentic AI internship: a multi-agent real-estate assis
 ```
 deliverables/
   week_01/   OpenClaw architecture fundamentals
-  week_02/ ... week_12/   upcoming weekly deliverables
+  week_02/   natural-language property search skill
+  week_03/ ... week_12/   upcoming weekly deliverables
 scripts/
   check_secrets.sh   pre-push safety check
 requirements.txt     Python dependencies
@@ -49,3 +50,4 @@ Developed on Ubuntu 22.04 (WSL) with Python 3.10.
 | Week | Topic |
 |------|-------|
 | [Week 1](deliverables/week_01/README.md) | OpenClaw architecture fundamentals |
+| [Week 2](deliverables/week_02/README.md) | Natural-language property search skill |
