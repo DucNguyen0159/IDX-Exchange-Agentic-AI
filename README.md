@@ -8,7 +8,8 @@ Work for the IDX Exchange Agentic AI internship: a multi-agent real-estate assis
 deliverables/
   week_01/   OpenClaw architecture fundamentals
   week_02/   natural-language property search skill
-  week_03/ ... week_12/   upcoming weekly deliverables
+  week_03/   MLS MySQL query layer (active listings + sold comps)
+  week_04/ ... week_12/   upcoming weekly deliverables
 scripts/
   check_secrets.sh   pre-push safety check
 requirements.txt     Python dependencies
