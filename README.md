@@ -52,3 +52,4 @@ Developed on Ubuntu 22.04 (WSL) with Python 3.10.
 |------|-------|
 | [Week 1](deliverables/week_01/README.md) | OpenClaw architecture fundamentals |
 | [Week 2](deliverables/week_02/README.md) | Natural-language property search skill |
+| [Week 3](deliverables/week_03/README.md) | MLS MySQL query layer (active listings + sold comps) |
