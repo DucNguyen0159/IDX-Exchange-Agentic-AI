@@ -1,9 +1,41 @@
 // Usage: node search.ts '{"city":"Irvine","maxPrice":1500000,"beds":3,"type":"Condominium","pool":"1"}'
 import { fileURLToPath } from "node:url";
 import { resolve } from "node:path";
+import type { RowDataPacket } from "mysql2";
+import type { PropertyFilters } from "./parseQuery.ts";
 import { query, pool } from "./db.ts";
 
-export async function searchActiveListings(filters, page = 1, limit = 10) {
+export type ListingRow = RowDataPacket & {
+  L_ListingID: string;
+  L_DisplayId: string;
+  L_Address: string;
+  L_City: string;
+  L_Zip: string;
+  price: number;
+  beds: number;
+  baths: string | number;
+  sqft: number;
+  type: string;
+  status: string;
+  lat: string;
+  lng: string;
+  YearBuilt: number;
+  AssociationFee: number;
+  DaysOnMarket: number;
+  PoolPrivateYN: string;
+  ViewYN: string;
+  FireplaceYN: string;
+  PhotoCount: number;
+  LA1_UserFirstName: string;
+  LA1_UserLastName: string;
+  LO1_OrganizationName: string;
+};
+
+export async function searchActiveListings(
+  filters: PropertyFilters,
+  page = 1,
+  limit = 10,
+): Promise<ListingRow[]> {
   const offset = (page - 1) * limit;
   let sql = `
     SELECT
@@ -17,7 +49,7 @@ export async function searchActiveListings(filters, page = 1, limit = 10) {
     FROM rets_property
     WHERE L_Status = 'Active'
   `;
-  const params = [];
+  const params: unknown[] = [];
 
   if (filters.city) {
     sql += " AND L_City = ?";
@@ -59,13 +91,12 @@ export async function searchActiveListings(filters, page = 1, limit = 10) {
   sql += " ORDER BY L_SystemPrice ASC LIMIT ? OFFSET ?";
   params.push(limit, offset);
 
-  return query(sql, params);
+  return query<ListingRow>(sql, params);
 }
 
-// Only run CLI when this file is the entrypoint (not when imported).
 const isMain =
-  process.argv[1] &&
-  fileURLToPath(import.meta.url) === resolve(process.argv[1]);
+  Boolean(process.argv[1]) &&
+  fileURLToPath(import.meta.url) === resolve(process.argv[1]!);
 
 if (isMain) {
   const raw = process.argv[2];
@@ -73,7 +104,7 @@ if (isMain) {
     console.error('Usage: node search.ts \'{"city":"Irvine",...}\'');
     process.exit(1);
   }
-  const filters = JSON.parse(raw);
+  const filters = JSON.parse(raw) as PropertyFilters;
   const rows = await searchActiveListings(filters);
   console.log(JSON.stringify(rows, null, 2));
   await pool.end();

@@ -1,9 +1,33 @@
 // Usage: node comps.ts Irvine 12
 import { fileURLToPath } from "node:url";
 import { resolve } from "node:path";
+import type { RowDataPacket } from "mysql2";
 import { query, pool } from "./db.ts";
 
-export async function getSoldComps(city, months = 12) {
+export type SoldRow = RowDataPacket & {
+  ListingKey: number | string;
+  UnparsedAddress: string;
+  City: string;
+  CloseDate: string | Date;
+  ClosePrice: number;
+  OriginalListPrice: number;
+  ListPrice: number;
+  DaysOnMarket: number;
+  BedroomsTotal: number;
+  BathroomsTotalInteger: number;
+  LivingArea: number;
+  PropertyType: string;
+  PropertySubType: string;
+  YearBuilt: number;
+  ListAgentFullName: string;
+  ListOfficeName: string;
+  BuyerOfficeName: string;
+};
+
+export async function getSoldComps(
+  city: string,
+  months = 12,
+): Promise<SoldRow[]> {
   const sql = `
     SELECT
       ListingKey, UnparsedAddress, City, CloseDate, ClosePrice,
@@ -18,12 +42,12 @@ export async function getSoldComps(city, months = 12) {
     ORDER BY CloseDate DESC
     LIMIT 50
   `;
-  return query(sql, [city, months]);
+  return query<SoldRow>(sql, [city, months]);
 }
 
 const isMain =
-  process.argv[1] &&
-  fileURLToPath(import.meta.url) === resolve(process.argv[1]);
+  Boolean(process.argv[1]) &&
+  fileURLToPath(import.meta.url) === resolve(process.argv[1]!);
 
 if (isMain) {
   const city = process.argv[2];

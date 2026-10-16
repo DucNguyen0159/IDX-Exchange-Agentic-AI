@@ -1,11 +1,29 @@
 import { config } from "dotenv";
+import { existsSync } from "node:fs";
+import { homedir } from "node:os";
 import { fileURLToPath } from "node:url";
 import { dirname, resolve } from "node:path";
 import mysql from "mysql2/promise";
+import type { ResultSetHeader, RowDataPacket } from "mysql2";
 
-// week_03 → deliverables → repo → idx_ai/.env
 const here = dirname(fileURLToPath(import.meta.url));
-config({ path: resolve(here, "../../../.env") });
+
+// Prefer the workspace .env (works from week_03/ and from the OpenClaw skill copy).
+const envCandidates = [
+  resolve(homedir(), "projects/idx_ai/.env"),
+  resolve(here, "../../../.env"),
+];
+
+const envPath = envCandidates.find((p) => existsSync(p));
+if (envPath) {
+  config({ path: envPath });
+}
+
+if (!process.env.MYSQL_USER || !process.env.MYSQL_DATABASE) {
+  throw new Error(
+    `MySQL env not loaded. Tried:\n${envCandidates.map((p) => `  - ${p}`).join("\n")}`,
+  );
+}
 
 const pool = mysql.createPool({
   host: process.env.MYSQL_HOST,
@@ -17,9 +35,12 @@ const pool = mysql.createPool({
   queueLimit: 0,
 });
 
-export async function query(sql, params = []) {
-  const [rows] = await pool.execute(sql, params);
-  return rows;
+export async function query<T extends RowDataPacket = RowDataPacket>(
+  sql: string,
+  params: unknown[] = [],
+): Promise<T[]> {
+  const [rows] = await pool.execute<T[] | ResultSetHeader>(sql, params);
+  return rows as T[];
 }
 
 export { pool };

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "node searchFromQuery.ts 'Show me 3-bedroom condos in Irvine under $1.5M with a pool.'",
-    "install-skill": "mkdir -p ~/.openclaw/workspace/coordinator/skills/mls-db-search && cp SKILL.md db.ts search.ts comps.ts searchFromQuery.ts compsFromCity.ts parseQuery.ts package.json package-lock.json ~/.openclaw/workspace/coordinator/skills/mls-db-search/ && cp -a node_modules ~/.openclaw/workspace/coordinator/skills/mls-db-search/"
+    "install-skill": "mkdir -p ~/.openclaw/workspace/coordinator/skills/mls-db-search && cp SKILL.md db.ts search.ts comps.ts searchFromQuery.ts compsFromCity.ts parseQuery.ts package.json package-lock.json tsconfig.json ~/.openclaw/workspace/coordinator/skills/mls-db-search/ && cp -a node_modules ~/.openclaw/workspace/coordinator/skills/mls-db-search/"
   },
   "keywords": [],
   "author": "",

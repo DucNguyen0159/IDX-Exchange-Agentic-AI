@@ -1,8 +1,8 @@
 // Usage: node compsFromCity.ts Irvine 12
-import { getSoldComps } from "./comps.ts";
+import { getSoldComps, type SoldRow } from "./comps.ts";
 import { pool } from "./db.ts";
 
-function toCard(row) {
+function toCard(row: SoldRow) {
   return {
     address: row.UnparsedAddress,
     city: row.City,

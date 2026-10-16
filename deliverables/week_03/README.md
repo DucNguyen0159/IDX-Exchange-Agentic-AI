@@ -40,7 +40,8 @@ Example:
 
 | File | Purpose |
 |------|---------|
-| `db.ts` | MySQL pool + `query(sql, params)`; loads `~/projects/idx_ai/.env` |
+| `db.ts` | MySQL pool + `query(sql, params)`; loads `~/projects/idx_ai/.env` (also works from OpenClaw skill copy) |
+| `tsconfig.json` | Editor type checking only; Node runs `.ts` directly |
 | `search.ts` | `searchActiveListings(filters, page, limit)` on `rets_property` |
 | `comps.ts` | `getSoldComps(city, months)` on `california_sold` |
 | `parseQuery.ts` | Week 2 parser (copied so the skill is self-contained) |

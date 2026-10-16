@@ -1,9 +1,9 @@
 // Usage: node searchFromQuery.ts 'Show me 3-bedroom condos in Irvine under $1.5M with a pool.'
 import { parsePropertyQuery } from "./parseQuery.ts";
-import { searchActiveListings } from "./search.ts";
+import { searchActiveListings, type ListingRow } from "./search.ts";
 import { pool } from "./db.ts";
 
-function toCard(row) {
+function toCard(row: ListingRow) {
   return {
     address: row.L_Address,
     city: row.L_City,
