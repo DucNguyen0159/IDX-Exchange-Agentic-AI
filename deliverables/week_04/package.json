@@ -1,0 +1,15 @@
+{
+  "name": "week_04",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "install-skill": "mkdir -p ~/.openclaw/workspace/coordinator/skills/property-chat/mls && cp SKILL.md session.ts turn.ts chat.ts package.json package-lock.json tsconfig.json ~/.openclaw/workspace/coordinator/skills/property-chat/ && cp mls/*.ts ~/.openclaw/workspace/coordinator/skills/property-chat/mls/ && rm -rf ~/.openclaw/workspace/coordinator/skills/property-chat/node_modules && cp -a node_modules ~/.openclaw/workspace/coordinator/skills/property-chat/"
+  },
+  "dependencies": {
+    "dotenv": "^18.0.8",
+    "mysql2": "^3.24.6"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5"
+  }
+}
