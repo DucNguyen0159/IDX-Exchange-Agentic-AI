@@ -1,0 +1,15 @@
+{
+  "name": "week_05",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "dotenv": "^18.0.8",
+    "mysql2": "^3.24.6"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5"
+  },
+  "scripts": {
+    "install-skill": "mkdir -p ~/.openclaw/workspace/coordinator/skills/market-stats && cp SKILL.md db.ts citySummary.ts trend.ts inventory.ts market.ts package.json package-lock.json tsconfig.json ~/.openclaw/workspace/coordinator/skills/market-stats/ && rm -rf ~/.openclaw/workspace/coordinator/skills/market-stats/node_modules && cp -a node_modules ~/.openclaw/workspace/coordinator/skills/market-stats/"
+  }
+}
