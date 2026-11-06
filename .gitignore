@@ -23,6 +23,7 @@ __pycache__/
 # Node
 node_modules/
 deliverables/week_04/sessions.json
+deliverables/week_06/vectors.json
 
 # External repos (installed separately, see README)
 openclaw/

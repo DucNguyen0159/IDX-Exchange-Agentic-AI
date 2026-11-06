@@ -11,7 +11,8 @@ deliverables/
   week_03/   MLS MySQL query layer (active listings + sold comps)
   week_04/   multi-turn conversational property search
   week_05/   market statistics from sold comps and active inventory
-  week_06/ ... week_12/   upcoming weekly deliverables
+  week_06/   semantic search over saved Irvine listing embeddings
+  week_07/ ... week_12/   upcoming weekly deliverables
 scripts/
   check_secrets.sh   pre-push safety check
 requirements.txt     Python dependencies
@@ -57,3 +58,4 @@ Developed on Ubuntu 22.04 (WSL) with Python 3.10.
 | [Week 3](deliverables/week_03/README.md) | MLS MySQL query layer (active listings + sold comps) |
 | [Week 4](deliverables/week_04/README.md) | Multi-turn conversational property search |
 | [Week 5](deliverables/week_05/README.md) | Market statistics from sold comps and active inventory |
+| [Week 6](deliverables/week_06/README.md) | Semantic search over saved Irvine listing embeddings |

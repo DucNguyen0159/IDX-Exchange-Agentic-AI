@@ -1,6 +1,6 @@
 ---
 name: property-chat
-description: Multi-turn home search. Remembers city, budget, and type for a user, asks one follow-up when something is missing, then returns rets_property cards.
+description: Multi-turn home search. Remembers city, budget, and type for a user, asks one follow-up when something is missing, then returns rets_property cards. Not for a one-shot style or renovation description; that belongs to semantic-search.
 metadata: { "openclaw": { "requires": { "bins": ["node"] } } }
 ---
 

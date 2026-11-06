@@ -1,0 +1,15 @@
+{
+  "name": "week_06",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "dotenv": "^18.0.8",
+    "mysql2": "^3.24.6"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5"
+  },
+  "scripts": {
+    "install-skill": "mkdir -p ~/.openclaw/workspace/coordinator/skills/semantic-search && cp SKILL.md db.ts embed.ts buildIndex.ts similar.ts package.json package-lock.json tsconfig.json vectors.json ~/.openclaw/workspace/coordinator/skills/semantic-search/ && rm -rf ~/.openclaw/workspace/coordinator/skills/semantic-search/node_modules && cp -a node_modules ~/.openclaw/workspace/coordinator/skills/semantic-search/"
+  }
+}

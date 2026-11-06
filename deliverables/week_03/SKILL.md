@@ -1,6 +1,6 @@
 ---
 name: mls-db-search
-description: Query MLS MySQL (rets_property active listings and california_sold comps) from a natural-language home search; returns formatted property cards.
+description: Query MLS MySQL (rets_property active listings and california_sold comps) when the user gives structured filters such as city, price, beds, or type. Not for style, renovation, or vibe descriptions; those belong to semantic-search.
 metadata: { "openclaw": { "requires": { "bins": ["node"] } } }
 ---
 

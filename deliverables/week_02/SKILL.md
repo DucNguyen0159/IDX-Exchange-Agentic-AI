@@ -1,6 +1,6 @@
 ---
 name: nl-property-search
-description: Parse a free-text home search (city, price, beds, baths, sqft, type, pool, view, HOA) into rets_property filters as JSON.
+description: Parse a free-text home search (city, price, beds, baths, sqft, type, pool, view, HOA) into rets_property filters as JSON. Not for renovation, style, or vibe matching; that belongs to semantic-search.
 metadata: { "openclaw": { "requires": { "bins": ["node"] } } }
 ---
 
