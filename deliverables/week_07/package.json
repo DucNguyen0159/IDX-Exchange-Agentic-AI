@@ -1,0 +1,15 @@
+{
+  "name": "week_07",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "dotenv": "^18.0.8",
+    "mysql2": "^3.24.6"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5"
+  },
+  "scripts": {
+    "install-skill": "mkdir -p ~/.openclaw/workspace/coordinator/skills/recommend-listings && cp SKILL.md db.ts score.ts hybrid.ts comps.ts recommend.ts package.json package-lock.json tsconfig.json ~/.openclaw/workspace/coordinator/skills/recommend-listings/ && VECT=vectors.json; [ -f \"$VECT\" ] || VECT=../week_06/vectors.json; cp -f \"$VECT\" ~/.openclaw/workspace/coordinator/skills/recommend-listings/vectors.json && rm -rf ~/.openclaw/workspace/coordinator/skills/recommend-listings/node_modules && cp -a node_modules ~/.openclaw/workspace/coordinator/skills/recommend-listings/"
+  }
+}
