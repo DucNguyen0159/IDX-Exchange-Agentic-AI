@@ -25,6 +25,8 @@ node_modules/
 deliverables/week_04/sessions.json
 deliverables/week_06/vectors.json
 deliverables/week_07/vectors.json
+deliverables/week_08/sources/
+deliverables/week_08/rag-index.json
 
 # External repos (installed separately, see README)
 openclaw/

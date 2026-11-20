@@ -13,7 +13,8 @@ deliverables/
   week_05/   market statistics from sold comps and active inventory
   week_06/   semantic search over saved Irvine listing embeddings
   week_07/   hybrid recommendations with sold-comp price checks
-  week_08/ ... week_12/   upcoming weekly deliverables
+  week_08/   RAG knowledge assistant for MLS terms and fields
+  week_09/ ... week_12/   upcoming weekly deliverables
 scripts/
   check_secrets.sh   pre-push safety check
 requirements.txt     Python dependencies
@@ -61,3 +62,4 @@ Developed on Ubuntu 22.04 (WSL) with Python 3.10.
 | [Week 5](deliverables/week_05/README.md) | Market statistics from sold comps and active inventory |
 | [Week 6](deliverables/week_06/README.md) | Semantic search over saved Irvine listing embeddings |
 | [Week 7](deliverables/week_07/README.md) | Hybrid recommendations with sold-comp price checks |
+| [Week 8](deliverables/week_08/README.md) | RAG knowledge assistant for MLS terms and fields |
